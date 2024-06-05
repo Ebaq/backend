@@ -5,11 +5,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import { Deal } from './database/deal.entity';
+import { MailModule } from './mail-sender/mail-sender.module';
+import { MailSenderService } from './mail-sender/mail-sender.service';
 
 @Module({
   imports: [
     DatabaseModule,
     HttpModule,
+    MailModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -22,6 +25,6 @@ import { Deal } from './database/deal.entity';
     }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, MailSenderService],
 })
 export class AppModule {}

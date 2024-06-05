@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+
+<body>
+	<h2 style='color: black;'>Здравствуйте, Дмитрий Александрович</h2>
+	<h3 style='color: black;'>Письмо пришло от Мартиросова Артема</h3>
+	<h4 style='color: black;'>Список 3 самых крупных сделок:</h4>
+	<ul>
+		<% data.forEach(deal=> { %>
+			<li style='color: black;'>Сумма: <%= deal.price %>, Наименование: <%= deal.client %>
+			</li>
+			<% }); %>
+	</ul>
+	<h4 style='color: black;'>Общее количество сделок на данный момент: <%= count %>
+	</h4>
+	<h4 style='color: black;'>Общее сумма сделок на данный момент: <%= total %>
+	</h4>
+</body>
+
+</html>

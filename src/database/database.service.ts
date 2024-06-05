@@ -15,6 +15,12 @@ export class DatabaseService {
     return await this.dealRepository.save(deals);
   }
 
+  findOne(Code: Deal): Promise<Deal | null> {
+    return this.dealRepository.findOneBy({
+      Код: Code['Код'],
+    });
+  }
+
   findAllDeals(): Promise<Deal[]> {
     return this.dealRepository.find();
   }
